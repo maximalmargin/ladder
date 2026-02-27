@@ -62,6 +62,14 @@ async def _run_task(task: str, verbose: bool) -> object:
 
 
 @main.command()
+def simulate() -> None:
+    """Run built-in cost simulation scenarios and print comparison tables."""
+    from .simulation import run_all_comparisons
+
+    click.echo(run_all_comparisons())
+
+
+@main.command()
 def levels() -> None:
     """Show all ladder level configurations."""
     click.echo("Ladder Levels:")
